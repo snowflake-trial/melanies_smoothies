@@ -41,3 +41,8 @@ if ingredients_list:
         if ingredients_string:
             session.sql(my_insert_stmt).collect()
             st.success(name_on_order + ', your Smoothie is ordered!', icon="✅")
+
+
+# New section to display smoothiefroot nutrition information
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
